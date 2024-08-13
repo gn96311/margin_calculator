@@ -20,6 +20,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"https": "^1.0.0",
 		"node-cache": "^5.1.2",
 		"node-fetch": "^3.3.2"
 	}
