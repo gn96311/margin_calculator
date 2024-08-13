@@ -341,7 +341,7 @@
         font-weight: normal;
         font-size: 18px;
         color: #333333;
-        text-aling: right;
+        text-align: right;
     }
 
     #result-display .result-subtitle {
