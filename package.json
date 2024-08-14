@@ -20,7 +20,11 @@
 	},
 	"type": "module",
 	"dependencies": {
+<<<<<<< HEAD
 		"@sveltejs/adapter-node": "^5.2.2",
+=======
+		"https": "^1.0.0",
+>>>>>>> 146d02cc143d63d7fd336dd291eeacea2dd25764
 		"node-cache": "^5.1.2",
 		"node-fetch": "^3.3.2"
 	}
