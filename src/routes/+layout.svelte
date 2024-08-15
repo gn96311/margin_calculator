@@ -2,14 +2,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Type 1 페이지</title>
+        <title>수출/수입 마진 계산기</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <div class="container">
         <header>
             <div class="header-ads">
-                <h1>MY-SITE.COM</h1>
+                <a href="/">
+			<img src="/site-banner.png" alt="margin-calculator.site" width="150" height="100">
+		</a>
                 <div class="header-ads-box">
                 </div>
             </div>
@@ -92,11 +94,6 @@
         background-color: #ccc;
         margin-left: 20px;
         border-radius: 15px;
-    }
-
-    header div h1 {
-        margin: 0;
-        font-size: 24px;
     }
 
     nav ul {
