@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { tick } from 'svelte';
+
     const date = new Date();
     const month = (date.getMonth() + 1).toString().padStart(2, "0");
     const day = (date.getDate()).toString().padStart(2, "0");
@@ -25,6 +27,8 @@
 
     let isLight = false;
 
+    let resultDisplayRef;
+
     function toggleDetails() {
         showDetails = !showDetails;
     }
@@ -33,7 +37,7 @@
         return num.toLocaleString('en-US');
     }
 
-    function validateCalculate(event) {
+    async function validateCalculate(event) {
         event.preventDefault();
 
         if (!priceCost || !priceCostInJapan || !packagingCost || !domesticShippingCost || !exportWeight || !discountPriceInJapan || !shippingPriceInJapan || !exportWidth || !exportLength || !exportHeight) {
@@ -52,8 +56,14 @@
                 return;
             }
         }
-        
+
         results = calculateCost();
+        
+        await tick();
+
+        if (resultDisplayRef) {
+            resultDisplayRef.scrollIntoView({ behavior: 'smooth'});
+        }
     }
 
     function handleSiteChange(){
@@ -219,7 +229,7 @@
 </div>
 
 {#if results.netProfit !== undefined}
-    <div id="result-display">
+    <div id="result-display" bind:this={resultDisplayRef}>
         <p class="result-explain">※ 해당 값은 예상치입니다.</p>
         <p class="result-title">매출: <span class="result-value">{formatNumber(Math.round(results.expectedSale))} 원</span></p>
         <p class="result-title">매입: <span class="result-value">{formatNumber(Math.round(results.expectedPurchase))} 원</span></p>
