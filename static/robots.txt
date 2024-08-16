@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://margin-calculator.site/sitemap.xml

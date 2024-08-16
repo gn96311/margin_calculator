@@ -1,9 +1,25 @@
+<svelte:head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-359815RNLB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-359815RNLB');
+  </script>
+</svelte:head>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>수출/수입 마진 계산기</title>
+        <meta name="description" content="중국수입/일본수출 마진 계산기를 사용하여 수출 및 수입 마진을 간편하게 계산하세요. 수입/사입/수출을 하는 판매자분들에게 최적의 솔루션을 제공해드립니다."> 
         <link rel="stylesheet" href="styles.css">
+        <meta name="keywords" content="수출, 수입, 중국수입, 일본수출, 일본 리셀, 중국 사입, 마진 계산기, 손익 분석, 수출입, 무역">
+        <meta name="robots" content="index,follow">
+        <meta name="language" content="ko">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9230486389083844"
             crossorigin="anonymous"></script>
     </head>
