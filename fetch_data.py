@@ -3,7 +3,7 @@ import json
 import os
 from datetime import datetime, timedelta
 
-auth_key = 'ifhQ1q8SSUMMSVAqWAtf4OwDaZYeMWDa'
+auth_key = 'inputYourAuthKey'
 
 date = datetime.now()
 day_of_week = date.weekday()
