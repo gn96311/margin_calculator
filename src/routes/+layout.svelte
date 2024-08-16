@@ -4,6 +4,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>수출/수입 마진 계산기</title>
         <link rel="stylesheet" href="styles.css">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9230486389083844"
+            crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="container">
