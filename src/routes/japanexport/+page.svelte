@@ -150,8 +150,11 @@
 
 <main>
     <form id="japan-export-calculation" on:submit={validateCalculate}>
-        <h2>{year}년 {month}월 {day}일 환율: 100엔(JPY) = {japanExchange} 원(KRW)</h2>
-        <label for="price">국내 제품 개당 구매가(원, ₩):</label>
+        <div class="exchange-box">
+            <h2>{year}년 {month}월 {day}일 환율: 100엔(JPY) = {japanExchange} 원(KRW)</h2>
+        </div>
+        <p class="explain-text"> ※ 제목에 마우스를 올리시면 더욱 자세한 설명을 보실 수 있습니다.</p>
+        <label for="price" title="국내에서 해당 제품을 얼마에 구매하는가에 대한 가격입니다.">국내 제품 개당 구매가(원, ₩):</label>
         <input type="text" id="price" name="price" placeholder="19800" bind:value={priceCost} title="국내에서 해당 제품을 얼마에 구매하는가에 대한 가격입니다.">
 
         <label for="site">판매사이트:</label>
@@ -161,14 +164,14 @@
             <option value = "rakuten">라쿠텐</option>
         </select>
 
-        <label for="packaging-cost">제품 포장 비용(원, ₩):</label>
+        <label for="packaging-cost" title="제품 추가 포장 비용입니다.">제품 포장 비용(원, ₩):</label>
         <input type="text" id="packaging-cost" name="packaging-cost" placeholder="200" bind:value={packagingCost} title="제품 추가 포장 비용입니다.">
 
-        <label for="domestic-shipping-cost">국내 발송 택배비(원, ₩):</label>
+        <label for="domestic-shipping-cost" title="한국 내 배송대행지로 보내기 위한 국내 택배 배송비입니다.">국내 발송 택배비(원, ₩):</label>
         <input type="text" id="domestic-shipping-cost" name="domestic-shipping-cost" placeholder="3000" bind:value={domesticShippingCost} title="한국 내 배송대행지로 보내기 위한 국내 택배 배송비입니다.">
 
         <div class="flex-container">
-            <label for="export-method">수출 방법:</label>
+            <label for="export-method" title="수출방법에는 해운/항공이 있으며, 항공이 해운보다 비싸지만 더 빠릅니다. Light의 경우 작고 가벼운 제품의 경우에는 기존보다 싸게 보낼 수 있는 방법으로, 가로 21.3cm, 세로 22.8cm, 높이 3cm, 무게 1kg 이하만 가능합니다.">수출 방법:</label>
             <div class="light-check-box">
                 <label for="light-button">Light 해당 여부 :</label>
                 <input type="checkbox" id="light-button" name="light-button" bind:checked={isLight} title="가로 21.3cm, 세로 22.8cm, 높이 3cm, 무게 1kg 이하만 가능합니다.">
@@ -180,33 +183,33 @@
         </select>
 
         <div class="export-size-padding-container">
-        <label for="export-size">수출 제품 사이즈(cm)</label>
+        <label for="export-size" title="제품의 사이즈를 측정하여 적어주시면 됩니다. 이는 제품의 부피무게 계산에 사용되며, 수출 비용에 관련된 값입니다.">수출 제품 사이즈(cm)</label>
             <div class="export-size">
                 <div class="export-size-width">
-                    <label for="export-size-width">가로</label>
+                    <label for="export-size-width" title="제품의 가로 사이즈입니다.">가로(cm)</label>
                     <input type="text" id="export-size-width" name="export-size-width" placeholder="20" bind:value={exportWidth} title="제품의 가로 사이즈입니다.">
                 </div>
                 <div class="export-size-length">
-                    <label for="export-size-length">세로</label>
+                    <label for="export-size-length" title="제품의 세로 사이즈입니다.">세로(cm)</label>
                     <input type="text" id="export-size-length" name="export-size-length" placeholder="20" bind:value={exportLength} title="제품의 세로 사이즈입니다.">
                 </div>
                 <div class="export-size-height">
-                    <label for="export-size-height">높이</label>
+                    <label for="export-size-height" title="제품의 높이 사이즈입니다.">높이(cm)</label>
                     <input type="text" id="export-size-height" name="export-size-height" placeholder="20" bind:value={exportHeight} title="제품의 높이 사이즈입니다.">
                 </div>
             </div>
         </div>
 
-        <label for="export-weight">수출 제품 무게(kg):</label>
+        <label for="export-weight" title="제품의 무게를 측정하여 적어주시면 됩니다. 이는 제품의 부피무게 계산에 사용되며, 수출 비용에 관련된 값입니다. 잘 모르겠다면 0을 적으시면 됩니다.">수출 제품 무게(kg):</label>
         <input type="text" id="export-weight" name="export-weight" placeholder="2" bind:value={exportWeight} title="일본으로 보내는 제품의 무게입니다.(박스 및 포장 포함)">
 
-        <label for="price-cost-in-japan">일본 판매가(엔, ¥):</label>
+        <label for="price-cost-in-japan" title="일본 마켓에서 판매할 가격입니다. 마켓 수수료 측정에 사용됩니다.">일본 판매가(엔, ¥):</label>
         <input type="text" id="price-cost-in-japan" name="price-cost-in-japan" placeholder="2980" bind:value={priceCostInJapan} title="일본 마켓에서 판매할 가격입니다.">
         
-        <label for="discount-price-in-japan">일본 설정 할인 가격(엔, ¥):</label>
+        <label for="discount-price-in-japan" title="일본 마켓에서 적용할 할인입니다. 100엔을 할인할 예정이면 100을 적으시면 됩니다. 마켓 수수료 측정에 사용됩니다.">일본 설정 할인 가격(엔, ¥):</label>
         <input type="text" id="discount-price-in-japan" name="discount-price-in-japan" placeholder="100" bind:value={discountPriceInJapan} title="일본 마켓에서 적용할 할인입니다.(100엔 할인할 예정이면 100)">
 
-        <label for="shipping-price-in-japan">일본 설정 배송비(엔, ¥):</label>
+        <label for="shipping-price-in-japan" title="일본 마켓에서 설정할 배송비입니다. 마켓 수수료 측정에 사용됩니다.">일본 설정 배송비(엔, ¥):</label>
         <input type="text" id="shipping-price-in-japan" name="shipping-price-in-japan" placeholder="770" bind:value={shippingPriceInJapan} title="일본 마켓에서 설정할 배송비입니다.">
 
         <button type="submit">계산</button>
@@ -304,6 +307,14 @@
         padding-right: 10px;
     }
 
+    .exchange-box{
+        border: 1px solid #ccc;
+        box-shadow: 2px 3px 2px rgba(0,0,0,0.1);
+        padding-right: 16px;
+        padding-legt: 16px;
+        border-radius: 8px;
+    }
+
     #site-selector {
         width: 100%;
         padding: 8px;
@@ -332,9 +343,15 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
+    .explain-text{
+        text-align: right;
+        font-size: 14px;
+    }
+
     form h2 {
         font-size: 18px;
-        margin-bottom: 20px;
+        padding-right: 16px;
+        padding-left: 16px;
     }
 
     form label {

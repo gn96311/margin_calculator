@@ -137,8 +137,11 @@
 
 <main>
     <form id="china-import-calculation" on:submit={validateCalculate}>
-        <h2>{year}년 {month}월 {day}일 환율: 1위안(CNY) = {chinaExchange} 원(KRW)</h2>
-        <label for="price">제품 개당 판매가(원, ₩):</label>
+        <div class="exchange-box">
+            <h2>{year}년 {month}월 {day}일 환율: 1위안(CNY) = {chinaExchange} 원(KRW)</h2>
+        </div>
+        <p class="explain-text"> ※ 제목에 마우스를 올리시면 더욱 자세한 설명을 보실 수 있습니다.</p>
+        <label for="price" title="국내에서 해당 제품을 얼마에 파는가에 대한 가격입니다.">제품 개당 판매가(원, ₩):</label>
         <input type="text" id="price" name="price" placeholder="19800" bind:value={priceCost} title="국내에서 해당 제품을 얼마에 파는가에 대한 가격입니다.">
 
         <label for="site">판매사이트:</label>
@@ -150,34 +153,43 @@
             <option value = "interpark">인터파크</option>
         </select>
 
-        <label for="original-price">중국 내 구매 원가(위안, ¥):</label>
+        <label for="original-price" title="중국에서 구매한 제품의 1개당 가격입니다.">중국 내 구매 원가(위안, ¥):</label>
         <input type="text" id="original-price" name="original-price" placeholder="10" bind:value={originalCost} title="중국에서 구매한 제품의 1개당 가격입니다.">
 
-        <label for="import-count">수입 개수(단위):</label>
+        <label for="import-count" title="전체 구매 개수입니다.">수입 개수(단위):</label>
         <input type="text" id="import-count" name="import-count" placeholder="100" bind:value={importCount} title="전체 구매 개수입니다.">
 
-        <label for="china-shipping-cost">중국 내 운송비(위안, ¥):</label>
+        <label for="china-shipping-cost" title="중국 생산지에서 중국 배송대행지로 보내는데 청구되는 택배비입니다.(1688 같은 경우 사용, 없으면 0)">중국 내 운송비(위안, ¥):</label>
         <input type="text" id="china-shipping-cost" name="china-shipping-cost" placeholder="50" bind:value={chinaShippingCost} title="중국 생산지에서 중국 배송대행지로 보내는데 청구되는 택배비입니다.(1688 같은 경우 사용, 없으면 0)">
 
-        <label for="box-small">포장 박스 개수(소형, 박스):</label>
-        <input type="text" id="box-small" name="box-small" placeholder="1" bind:value={smallBox} title="부피 40000cm³ 이하(대략 35cm 박스)">
-        
-        <label for="box-medium">포장 박스 개수(중형, 박스):</label>
-        <input type="text" id="box-medium" name="box-medium" placeholder="1" bind:value={mediumBox} title="부피 100000cm³ 이하(대략 100cm 박스)">
+        <div class="import-box-padding-container">
+        <label for="import-box" title="중국에서 제품을 수입할 때, 발송이 되는 박스의 개수입니다. 국내 수령 비용 계산을 위해 사용됩니다. 30cm 정육면체 박스 3개,  50cm의 정육면체 박스를 5개, 130cm 정육면체 박스 1개를 수입한다면, 소형에 3, 중형에 5, 대형에 1을 적으시면 됩니다.">수입 시, 발송되는 박스 개수:</label>
+            <div class="import-box">
+                <div class="import-box-small">
+                    <label for="box-small" title="부피 40000cm³ 이하(대략 35cm 박스)">소형(박스, 개)</label>
+                    <input type="text" id="box-small" name="box-small" placeholder="1" bind:value={smallBox} title="부피 40000cm³ 이하(대략 35cm 박스)">
+                </div>
+                <div class="import-box-medium">
+                    <label for="box-medium" title="부피 100000cm³ 이하(대략 100cm 박스)">중형(박스, 개)</label>
+                    <input type="text" id="box-medium" name="box-medium" placeholder="1" bind:value={mediumBox} title="부피 100000cm³ 이하(대략 100cm 박스)">
+                </div>
+                <div class="import-box-large">
+                    <label for="box-large" title="부피 160000cm³ 이하(대략 120cm 박스)">대형(박스, 개)</label>
+                    <input type="text" id="box-large" name="box-large" placeholder="1" bind:value={LargeBox} title="부피 160000cm³ 이하(대략 120cm 박스)">
+                </div>
+            </div>
+        </div>
 
-        <label for="box-large">포장 박스 개수(대형, 박스):</label>
-        <input type="text" id="box-large" name="box-large" placeholder="1" bind:value={LargeBox} title="부피 160000cm³ 이하(대략 120cm 박스)">
-
-        <label for="cbm">CBM(모를 경우 CBM 계산기 사용 → <a href="http://cbm.uassetstore.com/#google_vignette" target="_blank">CBM 계산기 링크</a>):</label>
+        <label for="cbm" title="부피무게를 뜻하는 것으로서, 이는 중국에서 한국으로 제품을 발송 시 발생하는 비용을 계산하기 위한 수치입니다. 화물의 가로x세로x높이가 각각 1m인 경우, 1CBM 입니다. 만일 50cm 정육면체 박스 10개를 수입한다면 0.5m(가로) X 0.5m(세로) X 0.5m(높이) X 10(개수) = 1.25CBM 입니다.">CBM(모를 경우 CBM 계산기 사용 → <a href="http://cbm.uassetstore.com/#google_vignette" target="_blank">CBM 계산기 링크</a>):</label>
         <input type="text" id="cbm" name="cbm" placeholder="2" bind:value={CBM} title="화물의 가로x세로x높이가 각각 1m인 경우, 1CBM 입니다.">
 
-        <label for="return-rate">반품/불량률(%):</label>
+        <label for="return-rate" title="제품이 반품 또는 불량으로 판매가 없게될 확률입니다, 일반적으로 3% 정도면 문제 없습니다.">반품/불량률(%):</label>
         <input type="text" id="return-rate" name="return-rate" placeholder="3" bind:value={returnRate} title="제품이 반품 또는 불량으로 판매가 없게될 확률입니다, 일반적으로 3% 정도면 문제 없습니다.">
 
-        <label for="packaging-cost">개별 제품 포장 비용(박스/비닐봉투, 원):</label>
+        <label for="packaging-cost" title="국내 발송 전 제품 포장을 위해 개별적으로 들어가는 비용입니다.">개별 제품 포장 비용(박스/비닐봉투, 원):</label>
         <input type="text" id="packaging-cost" name="packaging-cost" placeholder="200" bind:value={packagingCost} title="국내 발송 전 제품 포장을 위해 개별적으로 들어가는 비용입니다.">
 
-        <label for="korea-shipping-cost">제품 발송 택배비(원, ₩)</label>
+        <label for="korea-shipping-cost" title="국내에서 발송하기 위한 택배비입니다.">제품 발송 택배비(원, ₩)</label>
         <input type="text" id="korea-shipping-cost" name="korea-shipping-cost" placeholder="3000" bind:value={koreaShippingCost} title="국내에서 발송하기 위한 택배비입니다.">
 
         <button type="submit">계산</button>
@@ -252,9 +264,23 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
+    .explain-text{
+        text-align: right;
+        font-size: 14px;
+    }
+
     form h2 {
         font-size: 18px;
-        margin-bottom: 20px;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .exchange-box{
+        border: 1px solid #ccc;
+        box-shadow: 2px 3px 2px rgba(0,0,0,0.1);
+        padding-right: 16px;
+        padding-legt: 16px;
+        border-radius: 8px;
     }
 
     form label {
@@ -363,5 +389,23 @@
         font-size: 14px;
         color: #555555;
         text-align: right;
+    }
+
+    .import-box-padding-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .import-box {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .import-box div {
+        flex: 1 1 33%;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 </style>
