@@ -279,7 +279,7 @@
         border: 1px solid #ccc;
         box-shadow: 2px 3px 2px rgba(0,0,0,0.1);
         padding-right: 16px;
-        padding-legt: 16px;
+        padding-left: 16px;
         border-radius: 8px;
     }
 
