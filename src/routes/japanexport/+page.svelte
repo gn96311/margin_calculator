@@ -214,9 +214,9 @@
 
         <button type="submit">계산</button>
     </form>
-    <aside>
-        <p>광고를 위한 공간</p>
-    </aside>
+    <!-- <aside> -->
+    <!--    <p>광고를 위한 공간</p> -->
+    <!-- </aside> -->
 </main>
 
 <div class="explan-box">

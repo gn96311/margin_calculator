@@ -194,9 +194,9 @@
 
         <button type="submit">계산</button>
     </form>
-    <aside>
-        <p>광고를 위한 공간</p>
-    </aside>
+    <!-- <aside> -->
+    <!--    <p>광고를 위한 공간</p> -->
+    <!-- </aside> -->
 </main>
 <div class="explan-box">
     <p style="text-align: left;"><b>제품 개당 판매가(원, ₩)</b> : 국내에서 해당 제품을 얼마에 팔 것인가, 배송비가 별도라면 배송비를 포함해서 적어주세요.<br>(제품가 20000원, 배송비 3000원이면 23000원 적어주시면 됩니다.) </p>

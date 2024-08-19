@@ -28,10 +28,10 @@
         <header>
             <div class="header-ads">
                 <a href="/">
-			<img src="/site-banner.png" alt="margin-calculator.site" width="150" height="100">
-		</a>
-                <div class="header-ads-box">
-                </div>
+			        <img src="/site-banner.png" alt="margin-calculator.site" width="150" height="100">
+		        </a>
+                <!-- <div class="header-ads-box"> -->
+                <!-- </div> -->
             </div>
             <div class="nav-container">
                 <nav>
@@ -44,9 +44,9 @@
             </div>
         </header>
         <slot></slot>
-        <footer>
-            <p>광고</p>
-        </footer>
+        <!-- <footer> -->
+        <!--     <p>광고</p> -->
+        <!-- </footer> -->
         </div>
     </body>
 </html>
