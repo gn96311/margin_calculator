@@ -5,7 +5,7 @@
     <p>대한민국</p>
     <p>Address: 237, Shinho-dong, Gangseo-gu, Busan</p>
     <p>Republic of Korea</p>
-    <p>Email: <a href=#>contact us</a></p>
+    <p>Email: remarkable_corp@naver.com</p>
     <!-- <aside> -->
     <!--    <p>광고를 위한 공간</p> -->
     <!-- </aside> -->

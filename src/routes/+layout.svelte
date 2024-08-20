@@ -23,6 +23,10 @@
         <meta property="og:image" content="https://margin-calculator.site/site-banner.png">
         <meta property="og:url" content="https://margin-calculator.site/">
         <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="중국수입/일본수출 마진 계산기">
+        <meta name="twitter:description" content="중국수입/일본수출 마진 계산기를 사용하여 수출 및 수입 마진을 간편하게 계산하세요. 수입/사입/수출을 하는 판매자분들에게 최적의 솔루션을 제공해드립니다.">
+        <meta name="twitter:image" content="https://margin-calculator.site/site-banner.png">
         <meta name="robots" content="index,follow">
         <meta name="author" content="GEON KIM">
         <meta name="language" content="ko">
