@@ -14,11 +14,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>수출/수입 마진 계산기</title>
+        <title>중국수입/일본수출 마진 계산기</title>
         <meta name="description" content="중국수입/일본수출 마진 계산기를 사용하여 수출 및 수입 마진을 간편하게 계산하세요. 수입/사입/수출을 하는 판매자분들에게 최적의 솔루션을 제공해드립니다."> 
         <link rel="stylesheet" href="styles.css">
-        <meta name="keywords" content="수출, 수입, 중국수입, 일본수출, 일본 리셀, 중국 사입, 마진 계산기, 손익 분석, 수출입, 무역">
+        <meta name="keywords" content="수출, 수입, 중국 수입, 일본 수출, 일본 리셀, 중국 사입, 마진 계산기, 손익 분석, 수출입, 무역, 수출입 마진, 수입 마진, 구매대행, 중국 수입 마진 계산, 일본 리셀 마진 계산, 일본 수출 마진 계산">
+        <meta property="og:title" content="중국수입/일본수출 마진 계산기">
+        <meta property="og:description" content="중국수입/일본수출 마진 계산기를 사용하여 수출 및 수입 마진을 간편하게 계산하세요. 수입/사입/수출을 하는 판매자분들에게 최적의 솔루션을 제공해드립니다.">
+        <meta property="og:image" content="https://margin-calculator.site/site-banner.png">
+        <meta property="og:url" content="https://margin-calculator.site/">
+        <meta property="og:type" content="website">
         <meta name="robots" content="index,follow">
+        <meta name="author" content="GEON KIM">
         <meta name="language" content="ko">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9230486389083844"
             crossorigin="anonymous"></script>
@@ -44,9 +50,11 @@
             </div>
         </header>
         <slot></slot>
-        <!-- <footer> -->
+        <footer>
         <!--     <p>광고</p> -->
-        <!-- </footer> -->
+            <div class="information-box">
+                <p> <a href="/about">당사 소개 </a> - <a href="/privacy-policy">개인정보 보호정책</a> - <a href="/sitemap.xml">Sitemap</a> - © 2023 - 2024 by Geon Kim</p> 
+        </footer>
         </div>
     </body>
 </html>

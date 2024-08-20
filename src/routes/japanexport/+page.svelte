@@ -150,6 +150,7 @@
 
 <main>
     <form id="japan-export-calculation" on:submit={validateCalculate}>
+    <h2 class="page-type"> 한국 → 일본 수출 마진 계산기</h2>
         <div class="exchange-box">
             <h2>{year}년 {month}월 {day}일 환율: 100엔(JPY) = {japanExchange} 원(KRW)</h2>
         </div>
@@ -220,6 +221,35 @@
 </main>
 
 <div class="explan-box">
+    <h3 style="text-align: left;">수출 마진 계산기</h3>
+    <p style="text-align: left;">이 계산기는 한국에서 일본으로 제품을 수출할 때 예상되는 마진을 계산하는 데 사용됩니다. 사용자가 입력한 다양한 비용과 수치를 바탕으로 총 수입비용과 판매 예상 수익을 계산하여, 수입과 판매 과정에서 발생할 수 있는 이익을 추정합니다. 주요 기능과 계산 과정은 다음과 같습니다:</p>
+    <ol>
+        <li>
+            <p><strong>환율 정보 입력</strong>: 현재의 환율 정보는 한국수출입은행의 환율 정보를 자동적으로 가져와, 일본 엔화(JPY)와 한국 원화(KRW) 간 환전이 자동으로 계산됩니다.</p>
+        </li>
+        <li>
+            <p><strong>제품 비용 입력</strong>:</p>
+                <ul>
+                    <li><strong>한국 내 구매 원가</strong>: 한국에서 구입하는 제품의 가격을 한화로 입력합니다.</li>
+                    <li><strong>한국 내 운송비</strong>: 제품을 국내에서 배송대행지까지 운송하는 데 드는 비용입니다.</li>
+                </ul>
+            </li>
+        <li>
+            <p><strong>수출 과정 비용 계산</strong>:</p>
+                <ul>
+                    <li><strong>수출 제품 무게/사이즈</strong>: 수출 시 사용되는 박스의 크기/무게별 정보를 통하여 수출 배송 비용을 계산합니다.</li>
+                </ul>
+        </li>
+        <li><p><strong>판매 정보 및 비용 입력</strong>:</p>
+        <ul><li><strong>일본 판매가</strong>: 일본에서의 제품 판매 가격을 입력합니다.</li>
+        <li><strong>일본 설정 할인 가격</strong>: 일본에서 제품을 판매할 때, 얼마를 할인할 것인지를 입력합니다.</li>
+        <li><strong>일본 설정 배송비</strong>: 일본에서 제품을 판매할 때, 해당 제품에 매겨진 배송비가 얼마인지 입력합니다.</li>
+        </ul></li>
+        <li><p><strong>수익 계산</strong>:</p><ul><li>이 모든 정보를 바탕으로 계산기는 한국에서의 구매 및 운송비용, 일본에서의 판매 및 배송 비용을 종합하여 총 이익을 계산합니다. 이를 통해 사용자는 수입 사업의 잠재적 수익성을 평가할 수 있습니다.</li></ul>
+        </li></ol>
+    <p>이 계산기는 수입 비즈니스를 계획하거나 운영하는 사람들에게 유용하며, 효율적인 비용 관리와 최적의 가격 설정을 도와 수익을 극대화하는 데 도움을 줍니다.</p>
+    <br>
+    <h3 style="text-align: left;">각 빈칸들에 대한 자세한 설명</h3>
     <p style="text-align: left;"><b>국내 제품 개당 구매가(원, ₩)</b> : 국내에서 해당 제품을 얼마에 구매하였는지 적으시면 됩니다.</p>
     <p style="text-align: left;"><b>제품 포장 비용(원, ₩)</b> : 제품 발송을 위한 재포장에 들어간 비용을 적으시면 됩니다.</p>
     <p style="text-align: left;"><b>국내 발송 택배비(원, ₩)</b> : 해당 제품을 한국 내 배송대행지(수출회사)로 보내기 위한 비용입니다.</p>
@@ -265,6 +295,11 @@
         padding: 20px;
         width: 100%;
         gap: 20px;
+    }
+
+    h2.page-type{ 
+        text-align: right;
+        font-size: 22px;
     }
 
     .flex-container {
